@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+This is index.html
+<div id='t'>ttt</div>
+</body>
+</html>
+<script type="text/javascript">
+function btn_click() {
+    //创建XMLHttpRequest对象
+    var xmlHttp = new XMLHttpRequest();
+
+    //获取值
+    //var username = document.getElementById("txt_username").value;
+    //var age = document.getElementById("txt_age").value;
+
+    //配置XMLHttpRequest对象
+
+    //设置回调函数
+    xmlHttp.onreadystatechange = function () {
+    	if (xmlHttp.readyState == 3) {
+        //if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+        	var a = 2;
+            alert(xmlHttp.responseText);
+            document.getElementById('t').innerText = 'abc';
+        }
+    }
+
+    xmlHttp.open("get", "Test?username=abc", true);
+    //发送请求
+    xmlHttp.send(null);
+}
+
+btn_click();
+</script>
